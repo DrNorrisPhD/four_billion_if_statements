@@ -28,3 +28,9 @@ Fish:
 ```fish
 ./mod10_generator ; echo $status
 ```
+
+## To Check Progress
+```bash
+bash lines_per_second.sh ./mod10.c
+```
+Divide the output by 4,294,967,296 and multiply by 100 to get an approximate % of progress
