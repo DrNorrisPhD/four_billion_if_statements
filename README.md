@@ -20,10 +20,11 @@ gcc ./mod10.c -o ./mod10
 ```
 
 ## To view the result
-Bash: 
+Bash or Zsh: 
 ```bash 
 ./mod10_generator ; echo $?
 ```
+Fish:
 ```fish
 ./mod10_generator ; echo $status
 ```
