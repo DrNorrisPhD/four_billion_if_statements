@@ -12,7 +12,7 @@ It sounded funny, so I did it.
 
 ## Run the bash script
 ```bash 
-bash ./mod10_generator.sh
+./mod10_generator.sh
 ```
 
 ## Compile
