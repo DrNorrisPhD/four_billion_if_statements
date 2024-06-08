@@ -14,6 +14,10 @@ It sounded funny, so I did it.
 ```bash 
 ./mod10_generator.sh
 ```
+If you cannot run a script, make it executable by running:
+```bash
+chmod +x ./script_name
+```
 
 ## Compile
 ### Clang
@@ -43,4 +47,9 @@ and divide the output by 4,294,967,296 and multiply by 100
 To get the current total progress, run: 
 ```bash
 wc -l ./mod10.c | awk '{printf "%.02f%% Completed\n", $1/4294967296*100}'
+```
+
+To get a continually updating progress bar, run:
+```bash
+./progress_updater.sh ./mod10.c
 ```
