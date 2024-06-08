@@ -26,7 +26,7 @@ Clang segfaults every time I try to compile even the 16 bit version
 ```bash 
 gcc ./mod10.c -o ./mod10
 ```
-
+**BE WARNED** On my system (Arch Linux Kernder 6.9.1-zen 62.5GiB DDR4, i7-13700K) I get a memory error trying to compile with gcc  
 ## To view the result
 Bash or Zsh: 
 ```bash 
