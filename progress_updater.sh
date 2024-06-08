@@ -1,5 +1,5 @@
 #!/bin/bash
-#from https://github.com/fearside/ProgressBar
+# from https://github.com/fearside/ProgressBar
 
 # 1. Create ProgressBar function
 # 1.1 Input is currentState($1) and totalState($2)
