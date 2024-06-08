@@ -36,11 +36,11 @@ Fish:
 ## To Check Progress
 To get an approximate % of progress per second, run:
 ```bash
-./lines_per_second.sh ./mod10.c | awk '{printf "%.03f%% Progress per Second\n", $1/4294967296 * 100}'
+./lines_per_second.sh ./mod10.c | awk '{printf "%.05f%% Progress per Second\n", $1/4294967296 * 100}'
 ```
 and divide the output by 4,294,967,296 and multiply by 100
 
 To get the current total progress, run: 
 ```bash
-wc -l ./mod10.c | awk '{printf "%.05f%% Completed\n", $1/4294967296*100}'
+wc -l ./mod10.c | awk '{printf "%.02f%% Completed\n", $1/4294967296*100}'
 ```
