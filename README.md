@@ -1,5 +1,9 @@
-# These are just some bash scripts to generate C code for x % 10 but with if statements.
+# Bash scripts to generate C code for x % 10
+### but with if statements.
 
+It sounded funny, so I did it.
+
+## Script Descriptions
 `lines_per_second.sh` is to check how many lines are begin generated per second, to help track the progress of the `mod10_generator.sh` script
 
 `mod10_generator_16bit.sh` is a lighter version of `mod10_generator.sh`, and will output a file that can do `x % 10` up to the 16 bit integer limit of 65,535
@@ -13,7 +17,7 @@ bash ./mod10_generator.sh
 
 ## Compile
 ### Clang
-Clang gives a segmentation fault every time I try to compile even the 16 bit version
+Clang segfaults every time I try to compile even the 16 bit version
 ### GCC
 ```bash 
 gcc ./mod10.c -o ./mod10
@@ -22,15 +26,21 @@ gcc ./mod10.c -o ./mod10
 ## To view the result
 Bash or Zsh: 
 ```bash 
-./mod10_generator ; echo $?
+./mod10.out 489; echo $?
 ```
 Fish:
 ```fish
-./mod10_generator ; echo $status
+./mod10.out 489; echo $status
 ```
 
 ## To Check Progress
+To get an approximate % of progress per second, run:
 ```bash
-bash lines_per_second.sh ./mod10.c
+./lines_per_second.sh ./mod10.c | awk '{printf "%.03f%% Progress per Second\n", $1/4294967296 * 100}'
 ```
-Divide the output by 4,294,967,296 and multiply by 100 to get an approximate % of progress
+and divide the output by 4,294,967,296 and multiply by 100
+
+To get the current total progress, run: 
+```bash
+wc -l ./mod10.c | awk '{printf "%.05f%% Completed\n", $1/4294967296*100}'
+```
